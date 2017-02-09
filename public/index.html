@@ -2,32 +2,111 @@
 <html>
   <head>
     <title>CSS/HTML Workshop with Drivy</title>
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+		<link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' 'text/css'>
+        <link rel="stylesheet" href="style.css">
+		
   </head>
-  <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
+  <body class ="Fonttest">
+  
+  <div class="hit-the-floor">
+  <h1>Welcome to Drivy</h1>
+</div>
+  
+  
+  <center>
+	<div id="car">  
+    <table class="table1"> 
+		<thead>
+			<tr>
+				<th><b>Car</b></th>
+			</tr>
+		</thead>
+	   
+	<tbody>
+	
+      <tr><td><input class="model" type="text" placeholder="Car model"/></td></tr>
+      <tr><td><input class="price-by-day" type="number" placeholder="Price by day"/></td></tr>
+      <tr><td><input class="price-by-km" type="number" placeholder="Price by km"/></td></tr>
+	  
+	 </tbody>
+    	 	
+
+ </table>
+ </div>
+ <div  id="rental">
+ <table class="table2"> 
+		<thead >
+			<tr>
+				<th><b >Rental</b></th>
+			</tr>
+		</thead>
+	   
+	<tbody>
+		
+      <tr><td> <input class="begin" type="date" placeholder="Rental begin date"/></td></tr>
+      <tr><td><input class="end" type="date" placeholder="Rental end date"/></td></tr>
+      <tr><td><input class="distance" type="number" placeholder="Distance in km"/></td></tr>
+	 
+	 </tbody>
+    	 	
+
+ </table> 
+ 
+ 
+
+ </div>  
+ 
+ <p class = "OptionText">
+ <b>Deductible option</b>
+</p> 
+ <p class = "checkbox">
+ <input class="option" type="checkbox" placeholder="Deductible option"/>
+ </p>
+ 
+  <p class = "boutton">
+ <button id="compute" class="bgimg">Compute</button>
+ </p>
+
+  </center>  
+	
+	<div class ="center">
+	
+	<div id="actors"></div>
+   <script id="template" type="x-tmpl-mustache">
+	<div>	
       {{#actors}}
-        <div class="actor">
-          <span>{{who}}</span>
-          <span>{{type}}</span>
-          <span>{{amount}}</span>
-        </div>
+		<div class = "reponse">
+		 		 <div class="actor">
+				 <span>{{who}}</span>  
+				  <span>{{type}}</span> 
+				  <span>{{amount}}</span>
+				</div>
+			
+		</div>
       {{/actors}}
+	</div>
     </script>
+		<script id="templateCars" type="x-tmpl-mustache">
+		{{#cars}}
+		<div class="mdl-cell--4-col mdl-card cars-card">
+			<figure class="mdl-card__media">
+				<img src={{img}} alt="" />
+			</figure>
+			<div class="mdl-card__title cars-title">
+			  <h3 class="mdl-card__title-text cars-text ">{{vehicule}}</h1>
+			</div>
+			<div class="mdl-card__supporting-text cars-text">
+			  <p>Price by day : {{pricePerDay}} </p>
+			  <p>Price by km : {{pricePerKm}} </p>
+			</div>
+		</div>
+		{{/cars}}
+	</script>
+	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
     <script src="drivy.js"></script>
     <script src="index.js"></script>
+	</div>
   </body>
 </html>

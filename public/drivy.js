@@ -19,6 +19,8 @@ DRIVY = (function namespace () {
     };
   };
 
+  
+  
   /**
    * Number of rental days from begin and end date
    *
